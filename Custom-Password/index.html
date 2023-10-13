@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,200;1,700&family=Roboto:ital,wght@0,400;0,900;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+</head>
+<style>
+    body{
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-items: center;
+        place-content: center;
+        font-family: 'Roboto', sans-serif;
+    }
+    .inputContainer{
+        width: 60%;
+        border: solid 1px #333;
+        border-radius: 5px; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: transform 0.5s;
+    }
+    #input{
+        width: 100%;
+        border: none;
+        outline: none;
+        padding: 10px;
+        border-radius: 5px; 
+    }
+    .inputContainer:hover{
+       transform: scale(1.2);
+       box-shadow: 1px 1px 10px 1px black;
+    }
+    .inputContainer i{
+        padding-right: 10px;
+        cursor: pointer;
+    }
+
+</style>
+<body>
+    <h2>Custom password box</h2>
+    <div class="inputContainer">
+        <input type="password" id="input" placeholder="Enter password">
+        <i  class="fa fa-eye" onclick="functionAction()" id="i"></i>
+        </div>
+        <script src="script.js">
+            const input=document.getElementById("input");
+           
+            const icon=document.querySelector("#i")
+           
+           
+            let password=true;
+                function functionAction(){
+                if(password){
+                    input.setAttribute("type","text")
+                    icon.classList.remove("fa-eye")
+                    icon.classList.add("fa-eye-slash")
+                    password=false;
+                }else{
+                    input.setAttribute("type","password")
+                    icon.classList.remove("fa-eye-slash")
+                    icon.classList.add("fa-eye")
+                 password=true;
+                }
+            }
+
+        </script>
+</body>
+</html>
