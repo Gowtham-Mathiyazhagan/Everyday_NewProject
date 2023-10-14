@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,200;1,700&family=Roboto:ital,wght@0,400;0,900;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* @font-face{
+    font-family: digital-7;
+    src: url(/font/digital-7.ttf);
+} */
+body{
+    font-family:'Poppins', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(234, 235, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock{
+    width: 400px;
+    height: 400px;
+    position: relative;
+    background-color:darkgrey;
+    border-radius: 50%;
+    box-shadow: 20px 20px 0 0 black;
+}
+.clock.animation .colon{
+    animation: animation 0.2s ease-in infinite ;
+
+}
+@keyframes animation{
+    from{
+        opacity: 0.2;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.frame{
+    width: 380px;
+    height: 380px;
+    background-color:rgb(62, 62, 62);
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    border: 2px solid rgb(4, 4, 4);
+    z-index: 1;
+}
+.title{
+    font-size: 25px;
+    position: absolute;
+    top:49px;
+    left: 35%;
+    z-index: 3;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.clock>p{
+    position: absolute;
+    top: 85px;
+    left: 40%;
+    z-index: 3;
+    font-size: 15px;
+}
+.display{
+    position: absolute;
+    top: 35%;
+    left: 19%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 60%;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 40px;
+    z-index: 10;
+    background-color:rgb(62, 62, 62);
+    color: white;
+    padding: 10px;
+    gap: 1px;
+}
+.hrs,.mins,.secs,ms{
+    width: 30px;
+    text-align: center;
+    
+}
+.buttons{
+    height: 200px;
+    width: 90%;
+    background-color: rgb(254, 253, 253);
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+    border-bottom-left-radius:180px ;
+    border-bottom-right-radius:180px ;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+
+button{
+    height: 40px;
+    width: 60px;
+    border-radius: 50%;
+    text-align: center;
+    outline: none;
+    border: rgb(9, 9, 9) 1px solid;
+    /* padding:20px; */
+    margin: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(7, 7, 7);
+    transition: all 0.1s;
+}
+.strbtn{
+    background-color: rgb(19, 238, 48);
+}
+.stpbtn{
+    background-color: red;
+}
+.resbtn{
+    background-color: rgb(243, 243, 14);
+}
+.buttons>p{
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    padding: 0px 0px 0px 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+p>span{
+    display: inline-block;
+    color: black;
+    background-color: white;
+    padding:0px 5px 0px 5px ;
+    border: solid black 1px;
+   }
+.strbtn:active{
+    box-shadow: 2px 2px 2px 0 black;
+    color: rgb(128, 126, 126);
+
+}
+.stpbtn:active{
+    box-shadow: 2px 2px 2px 0 black;
+    color: rgb(128, 126, 126);
+
+}
+.resbtn:active{
+    box-shadow: 2px 2px 2px 0 black;
+    color: rgb(128, 126, 126);
+}
+
+.active{
+    opacity: 0.7;
+}
+
