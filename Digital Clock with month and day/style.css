@@ -1,0 +1,104 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto:ital,wght@0,400;0,900;1,300&display=swap');
+
+ *{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    user-select: none;
+ }
+ @font-face{
+    font-family: digital-7;
+    src: url(digital-7.ttf);
+ }
+ body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:#052e16;
+ }
+.day{
+   font-size: 12px;
+   width: 500px;
+   text-align: center;
+   padding-bottom: 20px;
+   font-weight: 500;
+   word-spacing: 10px;
+   text-transform: uppercase;
+}
+.clock{
+    display: flex;
+    padding-bottom:10px ;
+    position: relative;
+}
+.clock :is(div,span){
+    font-family: digital-7;
+    font-size: 55px;
+    color: #f30c0c;
+}
+.date{
+    padding-bottom: 20px;
+    font-family: digital-7;
+    font-size: 30px;
+    color:#fbbf24;
+}
+.month{
+    width:700px;
+    text-align: center;
+    font-size: 12px;
+    word-spacing: 5px;
+    text-transform: uppercase;
+}
+:is(.day,.month) span{
+    color: rgb(126, 127, 129);
+    opacity: 0.8;
+}
+span.active{
+    color: aliceblue;
+    opacity: 1;
+}
+
+.colon{
+    animation: example ease infinite 0.7s;
+width: 35px;
+text-align: center;
+}
+
+@keyframes example{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.meridian span{
+  display: none;
+}
+.meridian span.active{
+    display: block;
+    font-size: 30px;
+    position: absolute;
+    top:5px;
+    left: 100%;
+    color: #f30c0c;
+
+}
+.num{
+height: 50px;
+width: 35px;
+position: relative;
+}
+.num::before{
+    content: "0";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgb(151, 152, 152);
+    opacity: 0.2;
+}
